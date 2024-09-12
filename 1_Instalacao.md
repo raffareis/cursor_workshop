@@ -5,7 +5,7 @@
 1. Baixe o Cursor em [https://www.cursor.com/](https://www.cursor.com/)
 2. Instale o aplicativo
 3. Importe suas extensões e configurações do VS Code
-4. (Opcional) Recomendamos selecionar "Install cursor" para adicionar o comando `cursor` no terminal, similar ao `code` do VS Code
+4. (Opcional) Recomendo selecionar "Install cursor" para adicionar o comando `cursor` no terminal, similar ao `code` do VS Code
 5. Crie uma conta (use a conta da empresa para facilitar o pagamento) e faça login
 
 ## Configurações Recomendadas
