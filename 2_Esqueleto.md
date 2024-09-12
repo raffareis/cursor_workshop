@@ -23,7 +23,7 @@
 
 ## Dicas
 
-- Tentar não ficar em assimetria de conhecimento com a IA, procure entender o que está sendo feito.
-- Utilizar a ferramenta certa pra cada tarefa. Cursor, [Claude.ai](https://claude.ai/new), [Gemini](https://aistudio.google.com/), etc.
-- Registrar coisas em texto, eles podem ser referenciados, assim como código.
-- Alimentar a IA com o contexto que ela precisa é chave para o sucesso, seja em prompt, seja com web, git, folders, etc.
+- 🧠 Tentar não ficar em assimetria de conhecimento com a IA, procure entender o que está sendo feito.
+- 🛠️ Utilizar a ferramenta certa pra cada tarefa. Cursor, [Claude.ai](https://claude.ai/new), [Gemini](https://aistudio.google.com/), etc.
+- 📝 Registrar coisas em texto, eles podem ser referenciados, assim como código.
+- 🧩 Alimentar a IA com o contexto que ela precisa é chave para o sucesso, seja em prompt, seja com web, git, folders, etc.
