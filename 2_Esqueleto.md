@@ -1,19 +1,22 @@
 # Idéias para um Workshop sobre a IDE Cursor (Uma IDE IA First)
 
-## Habilidades
+## Objetivo
 
-- Consumir documentação para demonstrar como a IA consegue entender contextos de documentação
-- Utilizar algo open source que cause um impacto bacana com menor esforço, já usando a IA pra demonstrar devops
-- É difícil fazer um roteiro pré-estabelecido quando se está explorando a IA. Melhor um Workshop exploratório do que expositório.
+- Como usar Cursor além do básico, para agilizar nosso desenvolvimento.
+- Vencer a curva inicial de usar IA para desenvolvimento, mostrar que dá pra ser muito mais produtivo e competente.
+- Mostrar a filosofia de usar IA como alavanca para as próprias habilidades.
 
 ## Tutorial
 
 - Instalação / Configuração
 - Menus e os atalhos
-- Gerador de comandos CLI
+- Gerador de comandos
 - Chat
 - Inline
 - Composer
+- @ (Doc, Git, File, Web)
+- Imagens
+- Models
 - Cursor Prediction
 
 ## Dicas
@@ -21,6 +24,7 @@
 - Tentar não ficar em assimetria de conhecimento com a IA, procure entender o que está sendo feito.
 - Utilizar a ferramenta certa pra cada tarefa. Cursor, [Claude.ai](https://claude.ai/new), [Gemini](https://aistudio.google.com/), etc.
 - Registrar coisas em texto, eles podem ser referenciados, assim como código.
+- Alimentar a IA com o contexto que ela precisa é chave para o sucesso, seja em prompt, seja com web, git, folders, etc.
 
 ## Projeto
 
