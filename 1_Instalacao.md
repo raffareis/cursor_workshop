@@ -8,6 +8,61 @@
 4. (Opcional) Recomendo selecionar "Install cursor" para adicionar o comando `cursor` no terminal, similar ao `code` do VS Code
 5. Crie uma conta (use a conta da empresa para facilitar o pagamento) e faça login
 
+## Configuração do Git
+
+### Windows
+
+1. Baixe e instale o Git para Windows em [https://git-scm.com/download/win](https://git-scm.com/download/win)
+2. Durante a instalação, mantenha as opções padrão, mas certifique-se de escolher "Use Git from the Windows Command Prompt"
+3. Abra o Cursor e vá para Terminal > New Terminal
+4. Configure seu nome de usuário e email do Git:
+   ```
+   git config --global user.name "Seu Nome"
+   git config --global user.email "seu.email@exemplo.com"
+   ```
+
+### Linux
+
+1. Abra o terminal e instale o Git usando o gerenciador de pacotes da sua distribuição:
+   - Para Ubuntu/Debian: `sudo apt-get update && sudo apt-get install git`
+   - Para Fedora: `sudo dnf install git`
+2. Configure seu nome de usuário e email do Git:
+   ```
+   git config --global user.name "Seu Nome"
+   git config --global user.email "seu.email@exemplo.com"
+   ```
+
+## Instalação do Node.js
+
+### Windows
+
+1. Baixe o instalador do Node.js em [https://nodejs.org/](https://nodejs.org/)
+2. Execute o instalador e siga as instruções, mantendo as opções padrão
+3. Abra o Cursor e vá para Terminal > New Terminal
+4. Verifique a instalação digitando:
+   ```
+   node --version
+   npm --version
+   ```
+
+### Linux
+
+1. Abra o terminal e instale o Node.js usando o gerenciador de pacotes da sua distribuição:
+   - Para Ubuntu/Debian:
+     ```
+     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+     sudo apt-get install -y nodejs
+     ```
+   - Para Fedora:
+     ```
+     sudo dnf install nodejs
+     ```
+2. Verifique a instalação digitando:
+   ```
+   node --version
+   npm --version
+   ```
+
 ## Configurações Recomendadas
 
 ### General
