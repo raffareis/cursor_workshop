@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ilustrador de Textos</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Ilustrador de Textos</h1>
+                <p>Transforme textos literários em ilustrações geradas por IA</p>
+            </div>
+        </header>
+
+        <main class="container">
+            <section id="project-section">
+                <h2>Novo Projeto</h2>
+                <div class="input-group">
+                    <label for="project-title">Título do Projeto (opcional)</label>
+                    <input type="text" id="project-title" placeholder="Ex: Meu Conto Ilustrado">
+                    <button id="create-project-btn" class="btn btn-primary">Criar Projeto</button>
+                </div>
+                <div id="project-list-container" class="hidden">
+                    <h3>Projetos Recentes</h3>
+                    <ul id="project-list"></ul>
+                </div>
+            </section>
+
+            <section id="input-section" class="hidden">
+                <div class="project-info">
+                    <h2 id="current-project-title">Projeto sem título</h2>
+                    <span id="project-id" class="hidden"></span>
+                </div>
+                <h3>Insira seu Texto</h3>
+                <div class="input-group">
+                    <textarea id="text-input" placeholder="Cole ou digite seu texto aqui..." rows="10"></textarea>
+                </div>
+
+                <div class="style-settings">
+                    <h3>Configurações de Estilo</h3>
+                    <div class="input-group">
+                        <label for="style-preset">Escolha um estilo predefinido</label>
+                        <select id="style-preset">
+                            <option value>Selecione um estilo</option>
+                            <option value="aquarela">Aquarela</option>
+                            <option value="pixelart">Pixel Art</option>
+                            <option value="realista">Foto-realista</option>
+                            <option value="cartoon">Cartoon</option>
+                            <option value="anime">Anime/Mangá</option>
+                            <option value="3d">Renderização 3D</option>
+                            <option value="custom">Personalizado</option>
+                        </select>
+                    </div>
+                    <div id="custom-style-container" class="input-group hidden">
+                        <label for="custom-style">Descreva o estilo desejado</label>
+                        <textarea id="custom-style" placeholder="Ex: Estilo de pintura a óleo impressionista com cores vibrantes e pinceladas visíveis" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="ai-settings">
+                    <h3>Configurações da IA</h3>
+                    <div class="settings-grid">
+                        <div class="input-group">
+                            <label for="ai-model">Modelo</label>
+                            <select id="ai-model">
+                                <option value="dall-e-3">DALL-E 3</option>
+                                <option value="dall-e-2">DALL-E 2</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="image-size">Tamanho da Imagem</label>
+                            <select id="image-size">
+                                <option value="1024x1024">1024x1024</option>
+                                <option value="1024x1792">1024x1792 (Vertical)</option>
+                                <option value="1792x1024">1792x1024 (Horizontal)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="image-quality">Qualidade</label>
+                            <select id="image-quality">
+                                <option value="standard">Padrão</option>
+                                <option value="hd">Alta Definição</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="process-btn" class="btn btn-primary">Processar Texto</button>
+                    <button id="reset-btn" class="btn btn-secondary">Recomeçar</button>
+                </div>
+            </section>
+
+            <section id="segments-section" class="hidden">
+                <h2>Segmentos Identificados</h2>
+                <p class="info-text">O texto foi dividido nos seguintes segmentos para ilustração:</p>
+                <div id="segments-container"></div>
+                <div class="action-buttons">
+                    <button id="generate-all-btn" class="btn btn-primary">Gerar Todas as Imagens</button>
+                    <button id="back-to-input-btn" class="btn btn-secondary">Voltar</button>
+                </div>
+            </section>
+
+            <section id="results-section" class="hidden">
+                <h2>Resultados</h2>
+                <div id="results-container"></div>
+                <div class="action-buttons">
+                    <button id="export-btn" class="btn btn-primary">Salvar Resultados</button>
+                    <button id="new-project-btn" class="btn btn-secondary">Novo Projeto</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>Ilustrador de Textos &copy; 2023 - Desenvolvido com tecnologia de IA</p>
+            </div>
+        </footer>
+
+        <!-- Templates -->
+        <template id="segment-template">
+            <div class="segment-card">
+                <div class="segment-number"></div>
+                <div class="segment-text"></div>
+                <div class="segment-actions">
+                    <button class="generate-btn btn btn-small">Gerar Imagem</button>
+                    <button class="edit-prompt-btn btn btn-small btn-secondary">Editar Prompt</button>
+                </div>
+            </div>
+        </template>
+
+        <template id="result-template">
+            <div class="result-card">
+                <div class="result-text"></div>
+                <div class="result-image-container">
+                    <div class="loading-indicator hidden">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Gerando imagem...</span>
+                    </div>
+                    <img class="result-image hidden" alt>
+                    <div class="image-actions">
+                        <button class="regenerate-btn btn btn-small">Regenerar</button>
+                        <button class="view-prompt-btn btn btn-small btn-secondary">Ver Prompt</button>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <div id="prompt-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Prompt para Geração da Imagem</h3>
+                <div class="input-group">
+                    <textarea id="prompt-text" rows="6"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button id="save-prompt-btn" class="btn btn-primary">Salvar</button>
+                    <button id="cancel-prompt-btn" class="btn btn-secondary">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/api.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
